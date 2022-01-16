@@ -13,7 +13,7 @@ point2 = QgsPointXY(509722,4676488)
 point3 = QgsPointXY(425231,4598087)
 point4 = QgsPointXY(509722,4598087)
 points = [point3,point4,point2,point1]
-# or points = [QgsPoint(50,50),QgsPoint(50,150),QgsPoint(100,150),QgsPoint(100,50)] 
+
 
 
 #-----------------
