@@ -1,7 +1,10 @@
-#Nombre archivo: Corte de imagen
+#Nombre archivo: __main__.py
 #Autores: Waldemar Taras Tresniowski Ujaldón y Rubén Caaveiro Barro
-#Fecha: 16-1-2022
-#Descripción: Con la imagen calculada de NDVI y el polígono generado previamente recortar la imagen
+#Fecha: 18-1-2022
+#Descripción: Se ejecuta la funcion 'main' que ejecuta todas las funciones definidas. Tras ejecutar las 4 funciones, se limpia el directorio de salida
+#para obtener las nuevas ccapas creadas y eliminar archivos anteriores. Tras esto obtenemos una imagen NDVI recortada al area de estudio mediante un poligono
+#que se crea en una capa vectorial. Por último se introduce la simbología definida para NDVI en la capa final. En la consola de QGIS se añaden las cuatro capas 
+#creadas or orden. Y en la consola de resultdos de PyQGIS se imprimen los mensajes de ejecución y resultados del proceso.
 
 import os
 import glob
