@@ -110,7 +110,8 @@ def crearpoligonoexecute(parent_path):
     provider.addFeatures([feature])
 
     #escribir la capa en el disco
-    QgsVectorFileWriter.writeAsVectorFormat(mem_layer, dircuadr, 'utf-8', QgsCoordinateReferenceSystem('EPSG:32631'), "ESRI Shapefile")
+    QgsVectorFileWriter.writeAsVectorFormat(mem_layer, dircuadr, 'utf-8', 
+                                            QgsCoordinateReferenceSystem('EPSG:32631'), "ESRI Shapefile")
     
     #Añadir la capa del polígono a la interfaz
     layer = iface.addVectorLayer(dircuadr, '', 'ogr')
@@ -145,7 +146,8 @@ def clipexecute(parent_path):
                     'OUTPUT': output_raster,
                     }
 
-    #parametros extraidos de https://gis.stackexchange.com/questions/291301/how-to-call-clip-raster-by-mask-layer-tool-using-qgis-console-gdalclipraste
+    #parametros extraidos de https://gis.stackexchange.com/questions/291301/
+    #how-to-call-clip-raster-by-mask-layer-tool-using-qgis-console-gdalclipraste
 
     result = processing.run(alg_name, params, feedback=feedback)
     capacortada = QgsRasterLayer(os.path.join(parent_path, './output/ndvi_clip.tif'))
