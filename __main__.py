@@ -22,7 +22,7 @@ def main():
     clear(parent_path) #limpia la ejecucion anterior para que no haya problemas durante la ejecucion actual
     
     #ejecutamos los scripts secuencialmente
-    if NDVIexecute(parent_path): #comprueba que NDVImod2 se ejecuto correctamente antes de continuar
+    if NDVIexecute(parent_path): #comprueba que NDVI se ejecuto correctamente antes de continuar
         if crearpoligonoexecute(parent_path): #comprueba que crearpoligono se ejecuto correctamente antes de continuar
             if clipexecute(parent_path): #comprueba que clipsinfuncion se ejecuto correctamente antes de continuar
                 if simbolizarNDVIexecute(parent_path): #comprueba que simbolizarRasterbien se ejecuto correctamente antes de continuar
@@ -201,7 +201,12 @@ def simbolizarNDVIexecute(parent_path):
 
     renderer = QgsSingleBandPseudoColorRenderer(rlayer.dataProvider(), 1, shader)
     rlayer.setRenderer(renderer)
-        
+    print('Valor mínimo: ',stats.minimumValue)
+    print('Media: ',stats.mean)
+    print('Rango: ',stats.range)
+    print('Desviación típica: ',stats.stdDev)
+    print('Suma: ',stats.sum)
+    print('Suma de los cuadrados: ',stats.sumOfSquares)     
     print ('simbolizarNDVI executed succesfully!')
     
     return True #devuelve true si todo esta correcto
